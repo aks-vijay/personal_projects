@@ -19,6 +19,12 @@ The script employs the following cryptographic algorithms:
    git clone https://github.com/aks-vijay/personal_projects.git
    cd encrypter
 
+2. **Open the code in PyCharm or any other text editor and enter the below command to bundle the .py file to .exe file:**
+
+   ```bash
+   pip install pyinstaller
+   pyinstaller --onefile EncryptDecrypt.py
+   
 # Usage
 ## Prerequisites
 1. Before running the script, make sure you have Python installed on your system.
