@@ -11,7 +11,7 @@ The script employs the following cryptographic algorithms:
 - **Random Initialization Vector (IV):** Generated using a secure random number generator
 - **Encoding:** Base64 URL-safe encoding for representation of binary data
 
-## Usage
+## To install it in your machine
 
 1. **Clone the repository to your local machine:**
 
@@ -26,6 +26,12 @@ The script employs the following cryptographic algorithms:
    pyinstaller --onefile EncryptDecrypt.py
    
 # Usage
+1. Double click the executable and follow the instructions.
+2. The prompt asks whether the user needs to 'encrypt' or 'decrypt'. Enter based on your needs.
+3. Enter the salt value: A salt is a random value that is generally not a secret, which is used to make some precomputed attacks harder
+4. Enter the seed value: A seed is a random value which generally has to be kept secret or the encryption is broken
+5. Enter the plaintext for encryption or cipher text for decryption.
+
 ## Prerequisites
 1. Before running the script, make sure you have Python installed on your system.
 2. Make sure cryptography library is installed in your system
