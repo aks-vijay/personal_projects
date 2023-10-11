@@ -36,8 +36,6 @@ The script employs the following cryptographic algorithms:
 1. Before running the script, make sure you have Python installed on your system.
 2. Make sure cryptography library is installed in your system
 
-Follow the prompts to choose between encryption and decryption, enter the salt and seed, and input the plaintext or ciphertext accordingly.
-
 ## Features
 1. Encryption: Securely encrypt text using PBKDF2 for key derivation and AES in CFB mode for symmetric encryption.
 2. Decryption: Decrypt previously encrypted text using the specified salt and seed.
