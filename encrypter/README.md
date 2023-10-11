@@ -36,12 +36,6 @@ The script employs the following cryptographic algorithms:
 1. Before running the script, make sure you have Python installed on your system.
 2. Make sure cryptography library is installed in your system
 
-## Running the Script
-Open a terminal and navigate to the project directory.
-
-## Run the script:
-> python {cloned_folder}/encrypt_decrypt.py
-
 Follow the prompts to choose between encryption and decryption, enter the salt and seed, and input the plaintext or ciphertext accordingly.
 
 ## Features
