@@ -6,6 +6,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from base64 import urlsafe_b64encode, urlsafe_b64decode
 
+
 def derive_key(salt, seed):
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
@@ -17,6 +18,7 @@ def derive_key(salt, seed):
     key = kdf.derive(seed)
     return key
 
+
 def encrypt(salt, seed, plaintext):
     key = derive_key(salt, seed)
     iv = os.urandom(16)
@@ -26,6 +28,7 @@ def encrypt(salt, seed, plaintext):
     tag = encryptor.tag
     encrypted_text = iv + tag + ciphertext
     return urlsafe_b64encode(encrypted_text).decode()
+
 
 def decrypt(salt, seed, ciphertext):
     key = derive_key(salt, seed)
@@ -39,24 +42,30 @@ def decrypt(salt, seed, ciphertext):
     decrypted_bytes = decryptor.update(ciphertext) + decryptor.finalize()
     return decrypted_bytes.decode()
 
-# User input
-choice = input("Do you want to encrypt or decrypt? Enter 'encrypt' or 'decrypt': ").lower()
-salt = getpass("Enter the salt: ").encode()
-seed = getpass("Enter the seed: ").encode()
 
-# Perform encryption or decryption based on user input
-if choice == 'encrypt':
-    plaintext = input("Enter the plaintext to encrypt: ")
-    result = encrypt(salt, seed, plaintext)
-    print("Encrypted text:", result)
+while True:
+    # User input
+    choice = input("Do you want to encrypt or decrypt? Enter 'encrypt' or 'decrypt' (type 'exit' to quit): ").lower()
 
-elif choice == 'decrypt':
-    ciphertext = input("Enter the ciphertext to decrypt: ")
-    try:
-        result = decrypt(salt, seed, ciphertext)
-        print("Decrypted text:", result)
-    except Exception as e:
-        print("Decryption failed. Make sure the salt and seed are correct.")
+    if choice == 'exit':
+        break
 
-else:
-    print("Invalid choice. Please enter 'encrypt' or 'decrypt'.")
+    salt = getpass("Enter the salt: ").encode()
+    seed = getpass("Enter the seed: ").encode()
+
+    # Perform encryption or decryption based on user input
+    if choice == 'encrypt':
+        plaintext = input("Enter the plaintext to encrypt: ")
+        result = encrypt(salt, seed, plaintext)
+        print("Encrypted text:", result)
+
+    elif choice == 'decrypt':
+        ciphertext = input("Enter the ciphertext to decrypt: ")
+        try:
+            result = decrypt(salt, seed, ciphertext)
+            print("Decrypted text:", result)
+        except Exception as e:
+            print("Decryption failed. Make sure the salt and seed are correct.")
+
+    else:
+        print("Invalid choice. Please enter 'encrypt' or 'decrypt'.")
