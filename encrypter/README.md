@@ -33,8 +33,8 @@ Open a terminal and navigate to the project directory.
 Follow the prompts to choose between encryption and decryption, enter the salt and seed, and input the plaintext or ciphertext accordingly.
 
 ## Features
-Encryption: Securely encrypt text using PBKDF2 for key derivation and AES in CFB mode for symmetric encryption.
-Decryption: Decrypt previously encrypted text using the specified salt and seed.
+1. Encryption: Securely encrypt text using PBKDF2 for key derivation and AES in CFB mode for symmetric encryption.
+2. Decryption: Decrypt previously encrypted text using the specified salt and seed.
 
 ## Security Considerations
 1. Ensure that you keep your salt and seed values confidential. Losing them may result in irreversible data loss.
