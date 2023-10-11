@@ -8,13 +8,14 @@ Before running the script, make sure you have Python installed on your system.
 
 ## Installation
 Clone the repository to your local machine:
-> git clone https://github.com/aks-vijay/personal_projects/encrypter
+> git clone https://github.com/aks-vijay/personal_projects.git
+> cd encrypter
 
 ## Running the Script
 Open a terminal and navigate to the project directory.
 
 ## Run the script:
-python encrypt_decrypt.py
+> python encrypt_decrypt.py
 
 Follow the prompts to choose between encryption and decryption, enter the salt and seed, and input the plaintext or ciphertext accordingly.
 
