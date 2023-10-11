@@ -29,7 +29,7 @@ Open a terminal and navigate to the project directory.
 
 ## Run the script:
    ```bash
-   python encrypt_decrypt.py
+   python encrypt_decrypt.py ```
 
 Follow the prompts to choose between encryption and decryption, enter the salt and seed, and input the plaintext or ciphertext accordingly.
 
